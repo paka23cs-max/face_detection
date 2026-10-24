@@ -1,5 +1,8 @@
-# Computer vision
-opencv-python-headless>=4.8,<5
+# Computer vision: webcam access, image processing, Haar Cascade classifiers.
+# Pinned below 5 because OpenCV 5.0 removed cv2.CascadeClassifier and the
+# bundled Haar cascade XML files (see README > Limitations).
+opencv-python>=4.8,<5
 
-# Web framework
+# Web framework for the Flask app (app.py): serves the HTML page, the
+# MJPEG video stream, and the start/stop/status JSON routes.
 Flask>=3.0
