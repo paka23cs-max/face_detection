@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face &amp; Eye Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Face &amp; Eye Detection</h1>
+    <p class="subtitle">Real-Time Computer Vision Using OpenCV and Haar Cascades</p>
+  </header>
+
+  <main class="container">
+
+    <section class="detection-panel">
+      <div class="video-wrapper">
+        <img id="video-stream" alt="Detection stream will appear here after you click Start" />
+        <div id="video-placeholder" class="video-placeholder">
+          <p>Camera is off. Click "Start Detection" to begin.</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <span class="stat-label">Detection Status</span>
+          <span id="status-value" class="stat-value status-stopped">Stopped</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Faces Detected</span>
+          <span id="face-count" class="stat-value">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Eyes Detected</span>
+          <span id="eye-count" class="stat-value">0</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="start-btn" class="btn btn-start">Start Detection</button>
+        <button id="stop-btn" class="btn btn-stop" disabled>Stop Detection</button>
+        <button id="reset-btn" class="btn btn-reset">Reset</button>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>How This Works</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>What is Face Detection?</h3>
+          <p>
+            Face detection is the process of locating human faces within an
+            image or video frame and marking their position, without
+            identifying <em>who</em> the person is. This project only
+            detects faces &mdash; it does not perform face recognition.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>What is Eye Detection?</h3>
+          <p>
+            Once a face region is found, a separate classifier searches
+            only inside that region for eyes. Searching inside the face
+            (instead of the whole frame) makes eye detection faster and
+            far less likely to mistake other objects for eyes.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>What is Haar Cascade?</h3>
+          <p>
+            A Haar Cascade is a classical, pre-trained machine-learning
+            based object detector. It was trained years ago by OpenCV's
+            developers on thousands of sample face/eye images and is
+            shipped as an XML file. This project uses that pretrained
+            classifier &mdash; it does not train a new model.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>What is OpenCV?</h3>
+          <p>
+            OpenCV (Open Source Computer Vision Library) is a free,
+            widely-used library of computer vision and image processing
+            functions. It handles webcam access, image conversion, and
+            running the Haar Cascade classifiers used here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-info">
+      <h2>Project Information</h2>
+      <p>
+        This is an academic B.Tech project titled
+        <strong>"Real-Time Face and Eye Detection Using Haar Cascade
+        Classifiers and OpenCV."</strong> It demonstrates a classical
+        (non deep-learning) computer vision pipeline: webcam capture,
+        grayscale conversion, and detection using OpenCV's pretrained
+        Haar Cascade classifiers, delivered through a Flask web backend
+        and a plain HTML/CSS/JavaScript frontend.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
