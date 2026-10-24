@@ -1,0 +1,212 @@
+/* ---------- Base / reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2933;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background-color: #1f3a5f;
+  color: #ffffff;
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.site-header h1 {
+  margin: 0 0 6px 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #c9d6e3;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 48px 16px;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+/* ---------- Video area ---------- */
+.detection-panel {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 4 / 3;
+  margin: 0 auto;
+  background-color: #0f1b2b;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#video-stream {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; /* shown via JS once streaming starts */
+}
+
+.video-placeholder {
+  color: #9fb3c8;
+  text-align: center;
+  padding: 16px;
+}
+
+/* ---------- Stats ---------- */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.stat-box {
+  flex: 1 1 160px;
+  background-color: #f4f6f8;
+  border: 1px solid #e2e8ef;
+  border-radius: 6px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #5f6b76;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.status-active {
+  color: #1f8a4c;
+}
+
+.status-stopped {
+  color: #b3261e;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-start {
+  background-color: #1f8a4c;
+  color: #ffffff;
+}
+
+.btn-stop {
+  background-color: #b3261e;
+  color: #ffffff;
+}
+
+.btn-reset {
+  background-color: #e2e8ef;
+  color: #1f2933;
+}
+
+/* ---------- Info section ---------- */
+.info-section h2,
+.project-info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.info-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+  color: #1f3a5f;
+}
+
+.info-card p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #3e4a54;
+}
+
+/* ---------- Project info ---------- */
+.project-info {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.project-info p {
+  line-height: 1.6;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
